@@ -10,6 +10,9 @@
 		title: "Topic #{topic}"
 	)
 end
+
+puts "3 topics created"
+
 10.times do |blog|
 	Blog.create!(
 		title: "My blog post #{blog}",
@@ -50,3 +53,12 @@ end
 end
 
 puts "9 portfolio items created"
+
+3.times do |technology|
+	Technology.create!(
+		name: "Technology #{technology}",
+		portfolio_post_id: PortfolioPost.last.id
+	)
+end
+
+puts "3 technologies created"

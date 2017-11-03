@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171103114008) do
+ActiveRecord::Schema.define(version: 20171103163528) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,14 @@ ActiveRecord::Schema.define(version: 20171103114008) do
     t.text "badge"
   end
 
+  create_table "technologies", force: :cascade do |t|
+    t.string "name"
+    t.bigint "portfolio_post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["portfolio_post_id"], name: "index_technologies_on_portfolio_post_id"
+  end
+
   create_table "topics", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
@@ -64,4 +72,5 @@ ActiveRecord::Schema.define(version: 20171103114008) do
   end
 
   add_foreign_key "blogs", "topics"
+  add_foreign_key "technologies", "portfolio_posts"
 end
