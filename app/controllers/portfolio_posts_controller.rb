@@ -13,8 +13,7 @@ class PortfolioPostsController < ApplicationController
 	end
 
 	def create
-		@portfolio_item = PortfolioPost.new(params.require(:portfolio_post).permit(:title, :subtitle, :body, 
-														   technologies_attributes: [:name]))
+		@portfolio_item = PortfolioPost.new(post_params)
 
 		respond_to do |format|
 			if @portfolio_item.save
@@ -32,7 +31,7 @@ class PortfolioPostsController < ApplicationController
 	def update
 		@portfolio_item = PortfolioPost.find(params[:id])
 		respond_to do |format|
-	    if @portfolio_item.update(params.require(:portfolio_post).permit(:title, :subtitle, :body))
+	    if @portfolio_item.update(post_params)
 	      format.html { redirect_to portfolio_posts_path, notice: 'Portfolio item was  successfully updated.' }
 	    else
 	      format.html { render :edit }
@@ -50,6 +49,14 @@ class PortfolioPostsController < ApplicationController
     	respond_to do |format|
       		format.html { redirect_to portfolio_posts_url, notice: 'Portfolio item was successfully destroyed.' }
     	end
+	end
+
+
+	private
+
+	def post_params
+		params.require(:portfolio_post).permit(:title, :subtitle, :body, 
+												technologies_attributes: [:name])
 	end
 
 end

@@ -20,5 +20,9 @@
       <p><%=link_to "Login", new_user_session_path%></p>
       <p><%=link_to "Register", new_user_registration_path%></p>
     <% end %>
+
+    <% if session[:source] %>
+      <p>Thanks for visiting me from <%= session[:source] %></p>
+    <% end %>
   </body>
 </html>
