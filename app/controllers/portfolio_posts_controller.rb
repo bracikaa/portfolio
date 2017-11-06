@@ -55,8 +55,11 @@ class PortfolioPostsController < ApplicationController
 	private
 
 	def post_params
-		params.require(:portfolio_post).permit(:title, :subtitle, :body, 
-												technologies_attributes: [:name])
+		params.require(:portfolio_post).permit(:title, 
+											   :subtitle, 
+											   :body, 
+											    technologies_attributes: [:name]
+											  )
 	end
 
 end
