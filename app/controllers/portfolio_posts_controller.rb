@@ -1,4 +1,7 @@
 class PortfolioPostsController < ApplicationController
+
+	layout 'portfolio'
+
 	def index
 		@portfolio_items = PortfolioPost.all
 	end
@@ -61,5 +64,4 @@ class PortfolioPostsController < ApplicationController
 											    technologies_attributes: [:name]
 											  )
 	end
-
 end

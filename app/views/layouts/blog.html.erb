@@ -4,15 +4,13 @@
     <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
   	<p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
-    <%= render 'shared/nav' %>
 
      <% if current_user.instance_of? User %>
       <p><%=link_to "Logout", destroy_user_session_path, method: :delete %></p>
@@ -22,6 +20,8 @@
     <% end %>
 
     <%= yield %>
+
+    <%= render 'shared/nav' %>
 
     <% if session[:source] %>
       <p>Thanks for visiting me from <%= session[:source] %></p>
