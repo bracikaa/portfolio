@@ -12,19 +12,17 @@
   	<p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <%= render 'shared/nav' %>
+    <%= render 'shared/nav', location: "top"  %>
 
-     <% if current_user.instance_of? User %>
-      <p><%=link_to "Logout", destroy_user_session_path, method: :delete %></p>
-    <% elsif current_user.instance_of? OpenStruct %>
-      <p><%=link_to "Login", new_user_session_path%></p>
-      <p><%=link_to "Register", new_user_registration_path%></p>
-    <% end %>
+    <%= login_helper %>
 
     <%= yield %>
 
-    <% if session[:source] %>
-      <p>Thanks for visiting me from <%= session[:source] %></p>
+    <%= content_tag :p, class: "my-content-tag" do %>
+      Paragraph Tag!
     <% end %>
+
+    <%= source_helper %>
+    
   </body>
 </html>
