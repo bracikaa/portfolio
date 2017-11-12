@@ -10,48 +10,16 @@
   </head>
 
   <body>
-  	<p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <%= render 'shared/nav', location: "top"  %>
-
       <div class="site-wrapper">
-
-      <div class="site-wrapper-inner">
-
-        <div class="cover-container">
-
-          <header class="masthead clearfix">
-            <div class="inner">
-              <h3 class="masthead-brand">Cover</h3>
-              <nav class="nav nav-masthead">
-                <a class="nav-link active" href="#">Home</a>
-                <a class="nav-link" href="#">Features</a>
-                <a class="nav-link" href="#">Contact</a>
-              </nav>
-            </div>
-          </header>
-          <%= source_helper %>
-          <main role="main" class="inner cover">
-            <h1 class="cover-heading">Cover your page.</h1>
-            <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-            <p class="lead">
-              <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
-            </p>
-          </main>
+        <div class="site-wrapper-inner">
+          <div class="cover-container">
+                  <%= render 'shared/nav' %>
+                  <%= source_helper %>
+          <%= yield %>
+          <%= render 'shared/footer' %>
         </div>
-
       </div>
-
     </div>
-
-    <%= login_helper %>
-
-    <%= yield %>
-
-    <footer>
-      <%= @copyright %>
-    </footer>
 
     
   </body>
