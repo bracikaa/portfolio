@@ -10,17 +10,21 @@
   </head>
 
   <body>
-      <div class="site-wrapper">
-        <div class="site-wrapper-inner">
-          <div class="cover-container">
-                  <%= render 'shared/nav' %>
-                  <%= source_helper %>
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
+
+
+          <%= render 'shared/nav' %>
+          <main role = "main" class="padding-body inner cover">
           <%= yield %>
+          </main>
+          <%= source_helper %>
           <%= render 'shared/footer' %>
+
+          
         </div>
       </div>
     </div>
-
-    
   </body>
 </html>
