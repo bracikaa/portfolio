@@ -1,12 +1,13 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status, :add_image]
-  layout 'blog'
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :edit, :update, :toggle_status]}, site_admin: :all
+  layout 'blog'
+  
 
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all.order("id DESC")
+    @blogs = Blog.all.order("id DESC").paginate(:page => params[:page], :per_page => 5)
   end
 
   # GET /blogs/1

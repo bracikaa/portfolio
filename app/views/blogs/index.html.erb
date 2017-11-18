@@ -1,7 +1,8 @@
 <div class="col-sm-8 blog-main">
-   <%= render @blogs %>
-
-</div><!-- /.blog-main -->
-
-<p id="notice"><%= notice %></p>
+    <%= render @blogs %>
+    <div class="digg_pagination">
+   		<%= will_paginate @blogs %>
+    </div>
+    <br>
+</div>
 
