@@ -58,3 +58,4 @@ gem 'petergate', '~> 1.6', '>= 1.6.3'
 gem "font-awesome-rails"
 gem 'kaminari', '~> 0.16.3' 
 gem 'will_paginate', '~> 3.1.0'
+gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5'
