@@ -11,9 +11,9 @@
 
   <body>
     <%= render 'shared/portfolio_header' %>
-    <main role="main">
-    <%= yield %>
-    </main>
+    
+      <%= yield %>
+   
     <%= render 'shared/portfolio_footer' %>
     <% if session[:source] %>
       <p>Thanks for visiting me from <%= session[:source] %></p>
