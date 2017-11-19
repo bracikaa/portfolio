@@ -9,6 +9,10 @@ class PortfolioPost < ApplicationRecord
 		where(subtitle: 'Angular')
 	end
 
+	def self.by_position
+		order("position ASC")
+	end
+
 	scope :angular_scope, -> { where(subtitle: 'Angular') }
 
 	after_initialize :default_values
