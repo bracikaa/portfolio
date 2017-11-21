@@ -1,5 +1,7 @@
 class PortfolioPost < ApplicationRecord
-	has_many :technologies
+	
+	has_many :technologies, dependent: :destroy	
+
 	accepts_nested_attributes_for :technologies, 
 								  reject_if: lambda { |x| x['name'].blank? }
 	
