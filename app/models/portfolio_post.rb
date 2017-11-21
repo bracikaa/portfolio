@@ -5,6 +5,9 @@ class PortfolioPost < ApplicationRecord
 	
 	validates_presence_of :title, :body, :main_image, :thumb_image
 
+	mount_uploader :main_image, PortfolioPostUploader
+	mount_uploader :thumb_image, PortfolioPostUploader
+
 	def self.angular
 		where(subtitle: 'Angular')
 	end

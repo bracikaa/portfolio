@@ -59,6 +59,8 @@ class PortfolioPostsController < ApplicationController
 		params.require(:portfolio_post).permit(:title, 
 											   :subtitle, 
 											   :body, 
+											   :main_image,
+											   :thumb_image,
 											    technologies_attributes: [:name]
 											  )
 	end
