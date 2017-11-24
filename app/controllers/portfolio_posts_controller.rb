@@ -34,7 +34,7 @@ class PortfolioPostsController < ApplicationController
 	def update
 		respond_to do |format|
 	    if @portfolio_item.update(post_params)
-	      format.html { redirect_to portfolio_posts_path, notice: 'Portfolio item was  successfully updated.' }
+	      format.html { redirect_to portfolio_post_show_path(@portfolio_item), notice: 'Portfolio item was  successfully updated.' }
 	    else
 	      format.html { render :edit }
 	    end
