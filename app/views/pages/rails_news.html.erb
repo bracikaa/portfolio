@@ -1,0 +1,14 @@
+
+<h1>Rails News</h1>
+
+<div class="row">
+	<% @tweets.each do |tweet| %>
+		<div class="col-md-6">
+			<div class="tweet_class">
+				<div class="card">
+					<%= tweet.inspect %>
+				</div>
+			</div>
+		</div>
+	<% end %>
+</div>

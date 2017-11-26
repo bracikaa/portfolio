@@ -163,14 +163,15 @@ body {
   .masthead,
   .mastfoot,
   .cover-container {
-    width: 60rem;
+    width: 70rem;
   }
 }
 
 .padding-body
 {
+  padding-top: 50px;
   margin-top: 80px;
-  padding-bottom: 80px;
+  padding-bottom: 50px;
 }
 
 
@@ -228,4 +229,15 @@ body {
   transform: translateX(-50%) translateY(-50%);
   background-size: contain;
 
+}
+
+.tweet_class
+{
+  color: black;
+  margin: 20px;
+}
+
+.tweet_class > .card
+{
+  padding: 10px;
 }

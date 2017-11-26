@@ -8,4 +8,8 @@ class PagesController < ApplicationController
 
   def contact
   end
+
+  def rails_news
+  	@tweets = TwitterSearch.twitter_search
+  end
 end

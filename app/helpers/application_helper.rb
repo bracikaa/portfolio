@@ -45,6 +45,10 @@ module ApplicationHelper
 				url: portfolio_posts_path,
 				name: "Portfolio Posts"
 			},
+			{
+				url: rails_news_path,
+				name: "Rails News"
+			}
 		]
 	end
 
