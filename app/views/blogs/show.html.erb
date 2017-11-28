@@ -4,5 +4,11 @@
 		<h2 class="blog-post-title"><%= @blog.title %></h2>
 		<%= @blog.body %>
 	</div>
+
+
+	<%= render 'comments/comment_form' %>
+	<div id="comments">
+		<%= render @blog.comments %>
+	</div>
 </div>
 
